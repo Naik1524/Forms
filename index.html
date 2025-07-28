@@ -31,7 +31,10 @@
       <span class="slider"></span>
     </label>
   </div>
-  <div class="form-container">
+
+  <!-- First Contact Us Form -->
+  <section class="form-section"> 
+    <div class="form-container">
         <h2>Contact Us</h2>
         <form id="contactForm" onsubmit="return validateForm()">
           <div class="form-group">
@@ -54,7 +57,21 @@
     
           <button type="submit" class="submit-btn">Send Message</button>
         </form>
- </div>
+    </div>
+  </section>
+ <!-- Second form -->
+ <section id="contact-section" class="glass-form-section">
+    <div class="glass-form">
+      <h2>Get in Touch</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Write your message here..." rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
 
 </body>
 </html>

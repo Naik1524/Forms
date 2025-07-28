@@ -28,6 +28,68 @@
     --button-hover: #007acc;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  /* 🌐 Glass Style Form Section */
+  .glass-form-section {
+    background: linear-gradient(to bottom right, #111, #333);
+  }
+
+  .glass-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    color: white;
+  }
+
+  .glass-form input,
+  .glass-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .glass-form button {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #3399ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .glass-form button:hover {
+    background-color: #007acc;
+  }
+
   body {
     font-family: 'Segoe UI', sans-serif;
     background-color: var(--bg-color);
