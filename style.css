@@ -1,179 +1,54 @@
 :root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --form-bg: #f4f6f8;
-    --input-bg: #ffffff;
-    --border-color: #cccccc;
+    --bg-color: #f9f9f9;
+    --text-color: #111;
+    --form-bg: #ffffff;
+    --input-bg: #fff;
+    --border-color: #ccc;
     --button-bg: #007bff;
     --button-hover: #0056b3;
   }
-
   [data-theme="dark"] {
-    --bg-color: #121212;
+    --bg-color: #1e1e1e;
     --text-color: #f1f1f1;
-    --form-bg: #484646;
-    --input-bg: #2a2a2a;
-    --border-color: #867e7e;
+    --form-bg: #2c2c2c;
+    --input-bg: #3a3a3a;
+    --border-color: #444;
     --button-bg: #3399ff;
     --button-hover: #007acc;
   }
-
-  [data-theme="light"] {
-    --bg-color: #ffffff;
-    --text-color: #7a7a7a;
-    --form-bg: #c2c2c2;
-    --input-bg: #ffffff;
-    --border-color: #c2c0c0;
-    --button-bg: #3399ff;
-    --button-hover: #007acc;
-  }
-
-  html, body {
+  
+  /* Basic Reset & Body Styling */
+  * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
   }
-
-  section {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-  }
-
-  /* 🌐 Glass Style Form Section */
-  .glass-form-section {
-    background: linear-gradient(to bottom right, #111, #333);
-  }
-
-  .glass-form {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
-    color: white;
-  }
-
-  .glass-form input,
-  .glass-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin: 0.5rem 0;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 1rem;
-    outline: none;
-  }
-
-  .glass-form button {
-    margin-top: 1rem;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #3399ff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .glass-form button:hover {
-    background-color: #007acc;
-  }
-
   body {
     font-family: 'Segoe UI', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
   }
-
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  .form-container {
+  
+  /* ===== NAVBAR ===== */
+  .navbar {
+    width: 100%;
     background-color: var(--form-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
-
-  .form-container h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .form-group {
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    width: 100%;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--input-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    max-width: 100%;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: var(--button-bg);
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--button-bg);
-    color: white;
-    font-size: 1rem;
+  .navbar-title {
+    font-size: 20px;
     font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-
-  .submit-btn:hover {
-    background-color: var(--button-hover);
-  }
-
-  .error {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
+  
+  /* Theme Toggle Switch */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
   }
   .switch {
     position: relative;
@@ -181,41 +56,115 @@
     width: 50px;
     height: 24px;
   }
-
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-
   .slider {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-color: #ccc;
-    transition: 0.4s;
     border-radius: 24px;
+    cursor: pointer;
+    transition: 0.4s;
   }
-
   .slider:before {
-    position: absolute;
     content: "";
+    position: absolute;
     height: 18px;
     width: 18px;
     left: 3px;
     bottom: 3px;
     background-color: white;
-    transition: 0.4s;
     border-radius: 50%;
+    transition: 0.4s;
   }
-
   input:checked + .slider {
     background-color: #2196F3;
   }
-
   input:checked + .slider:before {
     transform: translateX(26px);
   }
+  
+  /* ===== FORMS ===== */
+  section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  /* First Form */
+  .form-container {
+    background-color: var(--form-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-container h2 {
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 16px;
+  }
+  .submit-btn {
+    margin-top: 10px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background-color: var(--button-hover);
+  }
+  .error {
+    font-size: 14px;
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* ===== Glass Form ===== */
+  .glass-form-section {
+    background: transparent;
+  }
+  .glass-form {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  .glass-form h2 {
+    margin-bottom: 20px;
+  }
+  .glass-form input,
+  .glass-form textarea {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+  }
+  .glass-form button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .glass-form button:hover {
+    background-color: var(--button-hover);
+  }
+  
